@@ -39,6 +39,7 @@ public class UserController {
 		return Common.Main.VIEW_PATH+"main_of_main.jsp";
 	}
 
+<<<<<<< HEAD
 	@RequestMapping( "/user_list.do" )
 	public String selectList(Model model) {
 		List<UserVO> user_list = service.selectList();

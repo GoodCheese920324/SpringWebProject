@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -18,6 +19,7 @@
           rel="stylesheet">
 
     <!-- Vendor CSS Files -->
+<<<<<<< HEAD
 
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     
@@ -36,15 +38,45 @@
     ======================================================== -->
 </head>
 <body>
+<c:if test="${isUser1 ne null}">
+    <!-- Button trigger modal -->
+    <button type="hidden" id="modalBtn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">로그인 정보 확인</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    로그인 중입니다.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</c:if>
+
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center back text-bg-success">
 
     <div class="d-flex align-items-center justify-content-between">
         <a href="#" class="logo d-flex align-items-center">
+<<<<<<< HEAD
 
             <img src="${pageContext.request.contextPath}/resources/upload/logo.jpg" alt="">         
 
             <span class="d-none d-lg-block">인류의 적, 모두 마셔 없애자.</span>
+=======
+            <img src="${pageContext.request.contextPath}resources/upload/logo.jpg" alt="">
+            <span class="d-none d-lg-block">홈페이지 제목</span>
+>>>>>>> origin/feature/성진
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -68,11 +100,21 @@
             <li class="nav-item dropdown pe-3">
 
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+<<<<<<< HEAD
 
                     <img src="${pageContext.request.contextPath}/resources/upload/Stephan.jpg" alt="Profile" class="rounded-circle">
 
                    
                     <span class="d-none d-md-block dropdown-toggle ps-2">GoodCheese</span>
+=======
+                    <img src="${pageContext.request.contextPath}resources/upload/Stephan.jpg" alt="Profile" class="rounded-circle">
+                    <c:if test="${user1 eq null}">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">로그인 해주세요.</span>
+                    </c:if>
+                    <c:if test="${user1 ne null}">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">${user1.user1_name}</span>
+                    </c:if>
+>>>>>>> origin/feature/성진
                 </a><!-- End Profile Iamge Icon -->
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
@@ -116,6 +158,7 @@
 
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="#">
+                        <a class="dropdown-item d-flex align-items-center" href="logout.do">
                             <i class="bi bi-box-arrow-right"></i>
                             <span>Sign Out</span>
                         </a>
@@ -210,13 +253,25 @@
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
 
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/register/mainjs.js"></script>
 <!-- Vendor JS Files -->
+<<<<<<< HEAD
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
 
 <!-- Template Main JS File -->
 <script src="${pageContext.request.contextPath}/resources/assets/js/main.js"></script>
+=======
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<%--<script src="${pageContext.request.contextPath}/resources/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>--%>
+
+<!-- Template Main JS File -->
+<%--<script src="${pageContext.request.contextPath}/resources/assets/js/main.js"></script>--%>
+>>>>>>> origin/feature/성진
 
 </body>
 </html>
